@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F3FF"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@drawable/cat_white"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="12dp" />
+            <TextView
+                android:text="CATAT TABUNGAN"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- KARTU SALDO UTAMA -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Saldo"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txtTotalBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 0"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <!-- PEMASUKAN & PENGELUARAN -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <!-- Kolom Pemasukan -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/arrow_up_float"
+                            app:tint="#4CAF50" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pemasukan"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/txtTotalIncome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rp 0"
+                                android:textColor="#4CAF50"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Kolom Pengeluaran -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/arrow_down_float"
+                            app:tint="#F44336" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pengeluaran"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/txtTotalExpense"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rp 0"
+                                android:textColor="#F44336"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- RIWAYAT TRANSAKSI -->
+        <TextView
+            android:text="Riwayat Transaksi"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_transaction" /> <!-- Kita akan buat item layout baru -->
+
+    </LinearLayout>
+
+    <!-- FAB (Floating Action Button) untuk Tambah Catatan -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTransaction"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        app:tint="#FFFFFF"
+        app:backgroundTint="#FF9800"
+        android:contentDescription="Tambah Transaksi" />
+
+</RelativeLayout>

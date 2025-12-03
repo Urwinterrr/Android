@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warna dasar -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+
+    <!-- Warna primer -->
+    <color name="blue">#2196F3</color>        <!-- Biru -->
+    <color name="light_blue">#03A9F4</color>  <!-- Biru muda -->
+    <color name="dark_blue">#1976D2</color>   <!-- Biru tua -->
+
+    <!-- Warna sekunder -->
+    <color name="red">#F44336</color>
+    <color name="green">#4CAF50</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="orange">#FF9800</color>
+    <color name="purple">#9C27B0</color>
+
+    <!-- Warna background / UI -->
+    <color name="background">#E6F3FF</color>
+    <color name="button_color">#2196F3</color>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="8dp"
+    android:gravity="center_vertical"
+    android:background="?android:attr/selectableItemBackground"> <!-- Efek klik -->
+
+    <!-- Ikon untuk Kategori (misalnya: ikon makanan, belanja, dll.) -->
+    <ImageView
+        android:id="@+id/ivCategoryIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle_background"
+        android:padding="8dp"
+        app:tint="@android:color/white"
+        tools:src="@drawable/ic_lainnya" /> <!-- tools:src untuk preview -->
+
+    <!-- Detail Transaksi (Kategori & Catatan) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            tools:text="Makan" /> <!-- tools:text untuk preview -->
+
+        <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            tools:text="Makan siang di warteg" /> <!-- tools:text untuk preview -->
+    </LinearLayout>
+
+    <!-- Jumlah & Tanggal Transaksi -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="-Rp 50.000"
+            tools:textColor="#F44336" /> <!-- tools:textColor untuk preview -->
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="20 Nov 2025" /> <!-- tools:text untuk preview -->
+    </LinearLayout>
+
+</LinearLayout>

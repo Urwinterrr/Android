@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F3FF"
+    tools:context=".EditTransactionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Edit Transaksi"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- TIPE TRANSAKSI -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipe Transaksi"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgTransactionType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbIncomeEdit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pemasukan" />
+
+            <RadioButton
+                android:id="@+id/rbExpenseEdit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pengeluaran" />
+        </RadioGroup>
+
+        <!-- NOMINAL -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nominal"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext_background"
+            android:hint="Rp 0"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+
+        <!-- KATEGORI -->
+        <TextView
+            android:id="@+id/tvCategoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Kategori"
+            android:textStyle="bold"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext_background"
+            android:padding="4dp"
+            tools:visibility="visible" />
+
+        <!-- CATATAN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Catatan (Opsional)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext_background"
+            android:hint="contoh: Beli kopi"
+            android:inputType="textCapSentences"
+            android:padding="12dp" />
+
+        <!-- TOMBOL UPDATE -->
+        <Button
+            android:id="@+id/btnUpdateTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:text="Update Transaksi" />
+
+        <!-- TOMBOL HAPUS -->
+        <Button
+            android:id="@+id/btnDeleteTransaction"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Hapus Transaksi"
+            android:textColor="#F44336" />
+
+    </LinearLayout>
+</ScrollView>
